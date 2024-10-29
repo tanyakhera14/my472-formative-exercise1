@@ -40,10 +40,10 @@ head(iris_tibble)
 A function 'calculate_approximate_sepal_area()' is defined, which creates a new column in 'iris_tibble' that holds approximate sepal area, calculated by multiplying sepal length by sepal width. The function is called with iris_tibble as the argument. The output shows the modified tibble.
 ```{r function_1}
 # Function to create a new column in the 'iris_tibble' tibble with approximate petal area, calculated by multiplying petal length by petal width.
-calculate_approximate_sepal_area <- function(data) {
-  data <- data %>%
+calculate_approximate_sepal_area <- function(data_new) {
+  data_new <- data_new %>%
     mutate(Sepal.Area = Sepal.Length*Sepal.Width)
-  return(data)
+  return(data_new)
 }
 
 # Call calculate_approximate_petal_area on iris_tibble
