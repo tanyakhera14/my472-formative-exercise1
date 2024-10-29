@@ -1,0 +1,41 @@
+---
+title: "MY472-AT24-ps1-exercise1"
+output: html_document
+date: "2024-10-29"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Loading Packages
+```{r load_packages}
+# Loading the package
+library(tidyverse)
+```
+
+## Data
+This file uses the R built-in dataset 'iris'.
+```{r load_dataset}
+# Load built-in dataset
+data("iris")
+
+# Convert to tibble
+iris_tibble <- as_tibble(iris)
+head(iris_tibble)
+```
+
+## Function 1
+A function 'calculate_approximate_petal_area()' is defined, which creates a new column in 'iris_tibble' that holds approximate petal area, calculated by multiplying petal length by petal width. The function is called with iris_tibble as the argument. The output shows the modified tibble.
+```{r function_1}
+# Function to create a new column in the 'iris_tibble' tibble with approximate petal area, calculated by multiplying petal length by petal width.
+calculate_approximate_petal_area <- function(data) {
+  data <- data %>%
+    mutate(Petal.Area = Petal.Length*Petal.Width)
+  return(data)
+}
+
+# Call calculate_approximate_petal_area on iris_tibble
+iris_tibble <- calculate_approximate_petal_area(iris_tibble)
+head(iris_tibble)
+```
